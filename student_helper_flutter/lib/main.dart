@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:student_helper_flutter/screens/screen_landing.dart';
+import 'package:student_helper_flutter/screens/screen_login.dart';
+import 'package:student_helper_flutter/screens/screen_signup.dart';
+import 'package:student_helper_flutter/screens/screen_welcome.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,8 +15,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Student Helper Flutter',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue.shade800),
+        useMaterial3: true, 
         // This is the theme of your application.
         //
         // TRY THIS: Try running your application with "flutter run". You'll see
@@ -28,10 +35,16 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      // Start Route
+      initialRoute: '/landing',
+      routes: {
+        '/': (context) => const WelcomeScreen(),
+        '/login': (context) => const LoginScreen(),
+        '/signUp': (context) => const SignUpScreen(),
+        '/landing': (context) => const LandingScreen(),
+
+      }
     );
   }
 }
