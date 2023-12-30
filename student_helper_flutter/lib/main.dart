@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:student_helper_flutter/models/user.dart';
+import 'package:student_helper_flutter/screens/screen_countdown.dart';
 import 'package:student_helper_flutter/screens/screen_landing.dart';
 import 'package:student_helper_flutter/screens/screen_login.dart';
+import 'package:student_helper_flutter/screens/screen_reminders.dart';
 import 'package:student_helper_flutter/screens/screen_signup.dart';
 import 'package:student_helper_flutter/screens/screen_welcome.dart';
+import 'package:student_helper_flutter/screens/screen_flashcard.dart';
+
+// late User? user; Necessary for User to work after login. Delete the line below once you reactivate this line
+User user = User('Jay', 'jayddavis191@gmail.com');
 
 void main() {
   runApp(const MyApp());
@@ -20,15 +27,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue.shade800),
         useMaterial3: true, 
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a blue toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
+
         // Notice that the counter didn't reset back to zero; the application
         // state is not lost during the reload. To reset the state, use hot
         // restart instead.
@@ -43,11 +42,15 @@ class MyApp extends StatelessWidget {
         '/login': (context) => const LoginScreen(),
         '/signUp': (context) => const SignUpScreen(),
         '/landing': (context) => const LandingScreen(),
+        '/flashcards': (context) => FlashcardScreen(user: user),
+        '/reminders': (context) => const RemindersScreen(),
+        '/countdown': (context) => const CountdownScreen(),
 
       }
     );
   }
 }
+
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
