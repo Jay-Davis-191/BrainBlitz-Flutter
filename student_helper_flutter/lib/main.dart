@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
         '/landing': (context) => const LandingScreen(),
         '/flashcards': (context) => FlashcardScreen(user: user),
         '/reminders': (context) => ReminderScreen(),
-        '/countdown': (context) => const CountdownScreen(),
+        '/countdown': (context) => CountdownScreen(),
 
       }
     );
