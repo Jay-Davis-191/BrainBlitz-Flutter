@@ -11,11 +11,10 @@ class FlashcardScreen extends StatefulWidget {
   _FlashcardScreenState createState() => _FlashcardScreenState(); 
 }
 
-
 class _FlashcardScreenState extends State<FlashcardScreen> {
   List<Map<String, String>> flashcards = [
-    {'reminder': 'Name', 'answer': 'Jay'},
-    {'reminder': 'Age', 'answer': '21'},
+    {'question': 'Name', 'answer': 'Jay'},
+    {'question': 'Age', 'answer': '21'},
     // ... more flashcards ...
   ];
 
@@ -47,13 +46,37 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
     }
   }
 
+  void _addFlashcard() {
+    setState(() {
+      flashcards.add({
+        'question': 'New Question',
+        'answer': 'New Answer'
+      }); 
+    });
+  }
+
+  void _deleteFlashcard() {
+    setState(() {
+      flashcards.removeAt(currentIndex);
+      if (currentIndex >= flashcards.length -1) {
+        currentIndex = flashcards.length - 1; 
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return FlashcardWidget(
-      reminderText: flashcards[currentIndex]['reminder']!,
+    return BaseNavigationWidget(
+      title: 'Flashcards', 
+      content: [ FlashcardWidget(
+      reminderText: flashcards[currentIndex]['question']!,
       answerText: flashcards[currentIndex]['answer']!,
       onNext: _goToNextFlashcard,
       onPrevious: _goToPreviousFlashcard,
+      onAddFlashcards: _addFlashcard,
+      onDeleteFlashcards: _deleteFlashcard,
+      )
+      ],
     );
   }
 }

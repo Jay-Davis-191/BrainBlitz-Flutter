@@ -6,12 +6,16 @@ class FlashcardWidget extends StatefulWidget {
   final String answerText;
   final Function onNext;
   final Function onPrevious;
+  final VoidCallback onAddFlashcards; 
+  final VoidCallback onDeleteFlashcards; 
 
   FlashcardWidget({
     required this.reminderText,
     required this.answerText,
     required this.onNext,
     required this.onPrevious,
+    required this.onAddFlashcards, 
+    required this.onDeleteFlashcards
   });
 
   @override
@@ -61,6 +65,17 @@ class _FlashcardWidgetState extends State<FlashcardWidget> {
                     ),
                   ],
                 ),
+                SizedBox(height: 16.0), // Spacer
+                ElevatedButton(
+                  onPressed: widget.onAddFlashcards,
+                  child: Text("Add Flashcard"),
+                ),
+                SizedBox(height: 16.0), // Spacer
+                ElevatedButton(
+                  onPressed: widget.onDeleteFlashcards,
+                  child: Text("Delete Flashcard"),
+                )
+
               ],
             ),
           ),

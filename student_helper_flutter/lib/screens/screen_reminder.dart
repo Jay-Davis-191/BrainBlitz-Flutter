@@ -88,8 +88,8 @@ class _ReminderScreenState extends State<ReminderScreen> {
                 DateTime? pickedDate = await showDatePicker(
                   context: context,
                   initialDate: DateTime.now(),
-                  firstDate: DateTime(2000),
-                  lastDate: DateTime(2101),
+                  firstDate: DateTime.now(),
+                  lastDate: DateTime.now().add(Duration(days: 365 * 100)),
                 );
                 if (pickedDate != null) {
                   TimeOfDay? pickedTime = await showTimePicker(
