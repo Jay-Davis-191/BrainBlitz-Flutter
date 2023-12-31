@@ -3,7 +3,7 @@ import 'package:student_helper_flutter/models/user.dart';
 import 'package:student_helper_flutter/screens/screen_countdown.dart';
 import 'package:student_helper_flutter/screens/screen_landing.dart';
 import 'package:student_helper_flutter/screens/screen_login.dart';
-import 'package:student_helper_flutter/screens/screen_reminders.dart';
+import 'package:student_helper_flutter/screens/screen_reminder.dart';
 import 'package:student_helper_flutter/screens/screen_signup.dart';
 import 'package:student_helper_flutter/screens/screen_welcome.dart';
 import 'package:student_helper_flutter/screens/screen_flashcard.dart';
@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
         '/signUp': (context) => const SignUpScreen(),
         '/landing': (context) => const LandingScreen(),
         '/flashcards': (context) => FlashcardScreen(user: user),
-        '/reminders': (context) => const RemindersScreen(),
+        '/reminders': (context) => ReminderScreen(),
         '/countdown': (context) => const CountdownScreen(),
 
       }
