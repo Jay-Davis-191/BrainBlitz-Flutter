@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:student_helper_flutter/models/user.dart';
 import 'package:student_helper_flutter/screens/screen_countdown.dart';
@@ -7,6 +9,7 @@ import 'package:student_helper_flutter/screens/screen_reminder.dart';
 import 'package:student_helper_flutter/screens/screen_signup.dart';
 import 'package:student_helper_flutter/screens/screen_welcome.dart';
 import 'package:student_helper_flutter/screens/screen_flashcard.dart';
+import 'package:http/http.dart' as http; 
 
 // late User? user; Necessary for User to work after login. Delete the line below once you reactivate this line
 User user = User('Jay', 'jayddavis191@gmail.com');
@@ -51,6 +54,17 @@ class MyApp extends StatelessWidget {
   }
 }
 
+Future<void> fetchData() async {
+  final response = await http.get(Uri.parse('http://localhost:3000/getData'));
+  if (response.statusCode == 200) {
+    // Parse the response data (which is typically in JSON format)
+    final jsonData = json.decode(response.body);
+    // Handle or display the data as needed
+  } else {
+    // Handle errors
+    print('Failed to load data: ${response.statusCode}');
+  }
+}
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
