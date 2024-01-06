@@ -54,18 +54,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-Future<void> fetchData() async {
-  final response = await http.get(Uri.parse('http://localhost:3000/getData'));
-  if (response.statusCode == 200) {
-    // Parse the response data (which is typically in JSON format)
-    final jsonData = json.decode(response.body);
-    // Handle or display the data as needed
-  } else {
-    // Handle errors
-    print('Failed to load data: ${response.statusCode}');
-  }
-}
-
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 

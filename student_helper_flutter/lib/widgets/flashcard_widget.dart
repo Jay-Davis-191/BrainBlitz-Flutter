@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:student_helper_flutter/models/database.dart';
 import 'package:student_helper_flutter/models/user.dart';
 
 class FlashcardWidget extends StatefulWidget {
@@ -60,7 +61,11 @@ class _FlashcardWidgetState extends State<FlashcardWidget> {
                       child: Text('Previous'),
                     ),
                     ElevatedButton(
-                      onPressed: widget.onNext as void Function()?,
+                      // onPressed: widget.onNext as void Function()?,
+                      onPressed: () async {
+                        var data = await Database.fetchData(); 
+                        print(data); 
+                      },
                       child: Text('Next'),
                     ),
                   ],

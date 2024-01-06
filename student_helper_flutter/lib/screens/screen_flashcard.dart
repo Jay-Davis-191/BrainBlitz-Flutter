@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:student_helper_flutter/models/database.dart';
 import 'package:student_helper_flutter/models/user.dart';
 import 'package:student_helper_flutter/navigation/nav_base_widget.dart';
 import 'package:student_helper_flutter/widgets/flashcard_widget.dart';
@@ -11,7 +12,7 @@ class FlashcardScreen extends StatefulWidget {
   _FlashcardScreenState createState() => _FlashcardScreenState(); 
 }
 
-class _FlashcardScreenState extends State<FlashcardScreen> {
+class _FlashcardScreenState extends State<FlashcardScreen> {    
   List<Map<String, String>> flashcards = [
     {'question': 'Name', 'answer': 'Jay'},
     {'question': 'Age', 'answer': '21'},
