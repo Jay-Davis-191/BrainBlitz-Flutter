@@ -4,28 +4,54 @@ import 'package:flutter/material.dart';
 
 class Database {
   
-  // Base URL for your backend. 
-  // Update this with your deployed backend URL when you're ready for production.
   static const String baseURL = 'http://localhost:3000';
 
-  // Fetch data method
-  static Future<List<dynamic>> fetchData() async {
+  static Future<List<dynamic>> fetchUsers() async {
     try {
-      final response = await http.get(Uri.parse('$baseURL/getData'));
+      final response = await http.get(Uri.parse('$baseURL/getUsers'));
       
       if (response.statusCode == 200) {
-        // Parse the JSON response
         final jsonData = json.decode(response.body);
-        
-        // You can return or handle the jsonData as required
         return jsonData;
       } else {
-        // Handle other status codes (e.g., 404, 500)
         print('Failed to load data: ${response.statusCode}');
         return [];
       }
     } catch (error) {
-      // Handle any exceptions or errors
+      print('Error fetching data: $error');
+      return []; 
+    }
+  }
+
+    static Future<List<dynamic>> fetchFlashcards() async {
+    try {
+      final response = await http.get(Uri.parse('$baseURL/getFlashcards'));
+      
+      if (response.statusCode == 200) {
+        final jsonData = json.decode(response.body);
+        return jsonData;
+      } else {
+        print('Failed to load data: ${response.statusCode}');
+        return [];
+      }
+    } catch (error) {
+      print('Error fetching data: $error');
+      return []; 
+    }
+  }
+
+    static Future<List<dynamic>> fetchReminders() async {
+    try {
+      final response = await http.get(Uri.parse('$baseURL/getReminders'));
+      
+      if (response.statusCode == 200) {
+        final jsonData = json.decode(response.body);
+        return jsonData;
+      } else {
+        print('Failed to load data: ${response.statusCode}');
+        return [];
+      }
+    } catch (error) {
       print('Error fetching data: $error');
       return []; 
     }

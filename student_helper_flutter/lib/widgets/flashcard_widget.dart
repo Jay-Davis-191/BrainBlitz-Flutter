@@ -61,11 +61,7 @@ class _FlashcardWidgetState extends State<FlashcardWidget> {
                       child: Text('Previous'),
                     ),
                     ElevatedButton(
-                      // onPressed: widget.onNext as void Function()?,
-                      onPressed: () async {
-                        var data = await Database.fetchData(); 
-                        print(data); 
-                      },
+                      onPressed: widget.onNext as void Function()?,
                       child: Text('Next'),
                     ),
                   ],
@@ -79,7 +75,19 @@ class _FlashcardWidgetState extends State<FlashcardWidget> {
                 ElevatedButton(
                   onPressed: widget.onDeleteFlashcards,
                   child: Text("Delete Flashcard"),
-                )
+                ),
+                SizedBox(height: 16.0), // Spacer
+                ElevatedButton(
+                  onPressed: () async {
+                      var userData = await Database.fetchUsers(); 
+                      print(userData); 
+                      var flashcardData = await Database.fetchFlashcards();  // used for testing
+                      print(flashcardData); 
+                      var reminderData = await Database.fetchReminders();   // used for testing
+                      print(reminderData);
+                    },
+                    child: Text('TestData'),
+                ),
 
               ],
             ),
