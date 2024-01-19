@@ -14,6 +14,8 @@ This project utilises a cloud database via AWS to retrieve and store all user in
 
 As this was a Flutter-remake of one of my previous projects, I saved a reasonable amount of time by keeping the same design and ideas. It took me roughly 1 week to create this app with about approximately 30% of the total time spent on configuring, troubleshooting and connecting the AWS database.
 
+For upcoming development, I will be finalising the design of the app and implementing a profile paeg where the user can check their progress and achievements.
+
 ## Features
 Based on the same ideas and features as one of my previous projects, this project provides the following features:
 
