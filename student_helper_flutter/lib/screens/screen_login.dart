@@ -50,12 +50,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: height,
                     decoration: const BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage('assets/img_classroom.png'),
+                          image: AssetImage('assets/.png'), // To be finished later
                           fit: BoxFit.fill),
                     ),
                     child: const Center(
                       child: Text(
-                        'World of Schoolcraft',
+                        'Student Helper',
                         style: TextStyle(
                             fontSize: 48.0,
                             color: Colors.white,

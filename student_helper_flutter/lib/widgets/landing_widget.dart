@@ -19,7 +19,7 @@ class LandingWidget extends StatelessWidget {
                 margin: const EdgeInsets.all(10.0),
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/questBoard');
+                    Navigator.pushNamed(context, '/flashcards');
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blue,
@@ -32,12 +32,12 @@ class LandingWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
-                        Icons.flag,
+                        Icons.class_,
                         color: Colors.white,
                         size: 80.0,
                       ),
                       Text(
-                        'Quests',
+                        'Flashcards',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 20.0,
@@ -52,7 +52,7 @@ class LandingWidget extends StatelessWidget {
                 margin: const EdgeInsets.all(10.0),
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/mastery');
+                    Navigator.pushNamed(context, '/reminders');
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.red,
@@ -65,12 +65,12 @@ class LandingWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
-                        Icons.thumb_up_sharp,
+                        Icons.list,
                         color: Colors.white,
                         size: 80.0,
                       ),
                       Text(
-                        'Mastery',
+                        'Reminders',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 20.0,
@@ -85,7 +85,7 @@ class LandingWidget extends StatelessWidget {
                 margin: const EdgeInsets.all(10.0),
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/classBoard');
+                    Navigator.pushNamed(context, '/countdown');
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.purple,
@@ -98,12 +98,12 @@ class LandingWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(
-                        Icons.monitor,
+                        Icons.timer,
                         color: Colors.white,
                         size: 80.0,
                       ),
                       Text(
-                        'Class Board',
+                        'Countdown',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 20.0,
@@ -118,7 +118,7 @@ class LandingWidget extends StatelessWidget {
                 margin: const EdgeInsets.all(10.0),
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/avatar');
+                    Navigator.pushNamed(context, '/profile'); // Profile page to be added later
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.green,
@@ -136,7 +136,7 @@ class LandingWidget extends StatelessWidget {
                         size: 80.0,
                       ),
                       Text(
-                        'My Avatar',
+                        'My Profile',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 20.0,
@@ -149,85 +149,6 @@ class LandingWidget extends StatelessWidget {
             ],
           ),
         ),
-        // bottom half
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            //add classs
-            Container(
-              width: MediaQuery.of(context).size.width / 2 - 20,
-              margin: const EdgeInsets.all(10.0),
-              child: ElevatedButton(
-                onPressed: () {
-                  // Create dialog input box and retrieve value entered
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30.0),
-                    side: const BorderSide(color: Colors.black),
-                  ),
-                  padding: const EdgeInsets.all(10.0),
-                ),
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.add,
-                      color: Colors.black,
-                      size: 40.0,
-                    ),
-                    SizedBox(width: 10.0),
-                    Text(
-                      'ADD A CLASS',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20.0,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            //suggest
-            Container(
-              width: MediaQuery.of(context).size.width / 2 - 20,
-              margin: const EdgeInsets.all(10.0),
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/suggestion');
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30.0),
-                    side: const BorderSide(color: Colors.black),
-                  ),
-                  padding: const EdgeInsets.all(10.0),
-                ),
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.add,
-                      color: Colors.black,
-                      size: 40.0,
-                    ),
-                    SizedBox(width: 10.0),
-                    Text(
-                      'SUGGESTION',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16.0,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-        const Text('fade display') //todo
       ],
     );
   }
