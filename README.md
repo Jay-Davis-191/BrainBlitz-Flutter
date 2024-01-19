@@ -41,6 +41,7 @@ Based on the same ideas and features as one of my previous projects, this projec
 2. Open App.js and run the app with a Web simulator, preferrably the Chrome simulator (primarily used for testing).
 3. Don't worry about logging in as this feature will be added at a later date. Just click on Login and you'll see the correct page.
 4. Click on the hamburger menu and choose from the following: Flashcards, Reminders and Countdown.
+
 Unforutanetly, due to security purposes, the necessary connection to the database for the user to access their saved content, the backend NodeJS program must be run first, but that repository is private as it contains login credentials and will not be available to the public. 
 
 ## Contributions 
