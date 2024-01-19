@@ -40,7 +40,7 @@ Based on the same ideas and features as one of my previous projects, this projec
 
 ## How to run
 1. Open the app with Visual Studio.
-2. Open App.js and run the app with a Web simulator, preferrably the Chrome simulator (primarily used for testing).
+2. Open App.js and run the app with any simulator, preferrably the Chrome or Edge simulator as they were the primary simualtors throughout development.
 3. Don't worry about logging in as this feature will be added at a later date. Just click on Login and you'll see the correct page.
 4. Click on the hamburger menu and choose from the following: Flashcards, Reminders and Countdown.
 
