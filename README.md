@@ -1,7 +1,7 @@
-# Student Helper - Flutter
+# BrainBlitz - Flutter
 
 ## Description
-This project is a remake of a previous app I created but developed using Flutter and NodeJS. The original was a native Android app using Android Studio, which can be found under my other repositories called Student Helper. 
+This project is a remake of a previous app I created but developed using Flutter and NodeJS. The original was a native Android app using Android Studio, which can be found under my other repositories called BrainBlitz. 
 
 This project involves three major features: Reminders, Flashcards and a fun twist on the math game from the show, 8 Out of 10 Cats does Countdown. This project is aimed to helped students (uni students included), with their engagement and management of their studies and tasks.
 
